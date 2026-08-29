@@ -236,13 +236,13 @@ a, button, .project-card {
     position: relative;
 }
 
-/* Floating Work Header */
-.work-header {
+/* --- Floating Work Header --- */
+.floating-work-header {
     position: absolute;
-    top: 6rem;
-    left: 4rem;
+    top: 8rem; /* Sits nicely below the fixed navbar */
+    left: 4rem; /* Aligns with your project text */
     z-index: 10;
-    pointer-events: none; /* Allows clicking through it */
+    pointer-events: none; /* Ensures it doesn't block the custom cursor */
 }
 
 .section-eyebrow {
@@ -250,7 +250,7 @@ a, button, .project-card {
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 3px;
-    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .work-header h2 {
