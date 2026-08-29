@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biswarup Mondal — Software Developer</title>
+    <title>Biswarup — Software Developer</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Smooth Scrolling (Lenis) -->
+    <!-- Smooth Scrolling -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     
     <!-- GSAP & ScrollTrigger -->
@@ -15,45 +15,15 @@
 </head>
 <body>
 
-    <div class="horizontal-scroll-wrapper">
-    
-    <!-- Project 1 -->
-    <div class="project-card">
-        <div class="project-cover" style="background-image: url('./deep-pulse-image.webp');"></div>
-        
-        <div class="project-content">
-            <div class="project-num">01</div>
-            <div class="project-info">
-                <h3>Deep-Pulse</h3>
-                <p class="tech-tag">HTML / Frontend</p>
-                <p class="project-desc">A deep analytics or interface pulse-checking application built with a focus on structural markup and responsive design.</p>
-                <a href="https://github.com/Biswarup295/Deep-Pulse" target="_blank" class="case-link">View Repository ↗</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-        <div class="project-cover" style="background-image: url('./receptionist-image.webp');"></div>
-        
-        <div class="project-content">
-            <div class="project-num">02</div>
-            <div class="project-info">
-                <h3>AI-Hospital-Receptionist</h3>
-                <p class="tech-tag">JavaScript / AI Agent</p>
-                <p class="project-desc">An automated conversational agent designed to handle reception duties, triage logic, and appointment routing logic for healthcare environments.</p>
-                <a href="https://github.com/Biswarup295/AI-Hospital-Receptionist" target="_blank" class="case-link">View Repository ↗</a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-
+    <!-- 1. Custom Cursor -->
     <div class="custom-cursor"></div>
 
+    <!-- 2. Parallax Background -->
     <div class="site-background">
         <div class="bg-overlay"></div>
     </div>
+
+    <!-- 3. Navbar -->
     <nav class="navbar">
         <div class="logo">BISWARUP MONDAL</div>
         <div class="nav-links">
@@ -63,10 +33,11 @@
         </div>
     </nav>
 
-    <!-- Wrapper for the parallax footer reveal -->
+    <!-- Main Scroll Wrapper -->
     <div class="content-wrapper">
         <main class="smooth-scroll-wrapper">
             
+            <!-- 4. Hero Section -->
             <section class="hero" id="home">
                 <div class="hero-content">
                     <p class="fade-up eyebrow">Available for work · 2026</p>
@@ -80,15 +51,17 @@
                 <div class="scroll-indicator fade-up">scroll ↓</div>
             </section>
 
+            <!-- 5. Marquee Ribbon (The Yellow Bar) -->
             <section class="marquee-section">
                 <div class="marquee">
                     <div class="marquee-content">
-                        <span>Python // C // Java // SQL // JavaScript // HTML // CSS // </span>
-                        <span>Python // C // Java // SQL // JavaScript // HTML // CSS // </span>
+                        <span>Python // C++ // Java // SQL // JavaScript // HTML // CSS // </span>
+                        <span>Python // C++ // Java // SQL // JavaScript // HTML // CSS // </span>
                     </div>
                 </div>
             </section>
 
+            <!-- 6. Projects Section -->
             <section class="work" id="work">
                 <div class="work-header fade-up">
                     <h2>/projects</h2>
@@ -98,33 +71,45 @@
                 <div class="horizontal-scroll-container">
                     <div class="horizontal-scroll-wrapper">
                         
+                        <!-- Project 1 -->
                         <div class="project-card">
-                            <div class="project-num">01</div>
-                            <div class="project-info">
-                                <h3>Deep-Pulse</h3>
-                                <p class="tech-tag">HTML / Frontend</p>
-                                <p class="project-desc">A deep analytics or interface pulse-checking application built with a focus on structural markup and responsive design.</p>
-                                <a href="https://github.com/Biswarup295/Deep-Pulse" target="_blank" class="case-link">View Repository ↗</a>
+                            <!-- NOTE: Update this URL to match your exact repo filename -->
+                            <div class="project-cover" style="background-image: url('./Deep-Pulse.webp');"></div>
+                            
+                            <div class="project-content">
+                                <div class="project-num">01</div>
+                                <div class="project-info">
+                                    <h3>Deep-Pulse</h3>
+                                    <p class="tech-tag">HTML / Frontend</p>
+                                    <p class="project-desc">A deep analytics or interface pulse-checking application built with a focus on structural markup and responsive design.</p>
+                                    <a href="https://github.com/Biswarup295/Deep-Pulse" target="_blank" class="case-link">View Repository ↗</a>
+                                </div>
                             </div>
                         </div>
 
+                        <!-- Project 2 -->
                         <div class="project-card">
-                            <div class="project-num">02</div>
-                            <div class="project-info">
-                                <h3>AI-Hospital-Receptionist</h3>
-                                <p class="tech-tag">JavaScript / AI Agent</p>
-                                <p class="project-desc">An automated conversational agent designed to handle reception duties, triage logic, and appointment routing logic for healthcare environments.</p>
-                                <a href="https://github.com/Biswarup295/AI-Hospital-Receptionist" target="_blank" class="case-link">View Repository ↗</a>
+                            <!-- NOTE: Update this URL to match your exact repo filename -->
+                            <div class="project-cover" style="background-image: url('./AI-Hospital-Receptionist.webp');"></div>
+                            
+                            <div class="project-content">
+                                <div class="project-num">02</div>
+                                <div class="project-info">
+                                    <h3>AI-Hospital-Receptionist</h3>
+                                    <p class="tech-tag">JavaScript / AI Agent</p>
+                                    <p class="project-desc">An automated conversational agent designed to handle reception duties, triage logic, and appointment routing logic for healthcare environments.</p>
+                                    <a href="https://github.com/Biswarup295/AI-Hospital-Receptionist" target="_blank" class="case-link">View Repository ↗</a>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
-
         </main>
     </div>
 
-    <!-- Footer is now outside the main wrapper for the reveal effect -->
+    <!-- 7. Footer -->
     <footer class="contact" id="about">
         <div class="footer-content">
             <h2 class="fade-up">Let's craft <br> the next <br> algorithm.</h2>
