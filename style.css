@@ -505,10 +505,16 @@ a, button, .project-card {
     align-items: center;
     text-align: center;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .footer-header-centered h2 {
-    margin-bottom: 2rem; /* Adds perfect breathing room between the heading and the yellow label */
+    margin-bottom: 6rem; /* Creates massive space between the big text and / CONTACT */
+}
+
+.footer-header-centered .section-eyebrow {
+    align-self: flex-start; /* Pushes ONLY the / CONTACT label to the far left */
+    text-align: left;
 }
 
 .social-buttons {
