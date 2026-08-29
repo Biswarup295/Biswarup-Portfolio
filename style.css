@@ -16,7 +16,6 @@ body, html {
     color: var(--text-color);
     font-family: var(--font-primary);
     overflow-x: hidden;
-    /* REMOVE THIS LINE: background-color: var(--bg-color); */
 }
 
 ::selection {
@@ -24,33 +23,35 @@ body, html {
     color: var(--bg-color);
 }
 
-/* 
-  Structure for Footer Reveal Parallax 
-  The wrapper sits on top, the footer stays fixed at the bottom underneath it
-*/
+/* --- Background Image Styles --- */
+.site-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0; 
+    background-image: url('./Under%20the%20Trees.webp'); 
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(10,10,10,0.95)); 
+    z-index: 1;
+}
+
+/* --- Layout Wrappers --- */
 .content-wrapper {
     position: relative;
     z-index: 2;
     background-color: transparent; 
-    /* REMOVED: margin-bottom: 80vh; */
-}
-
-/* Footer put back into normal flow */
-.contact {
-    position: relative; 
-    width: 100%;
-    min-height: 80vh;
-    padding: 10rem 4rem 4rem 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 2;
-    
-    /* Premium glass effect over your background image */
-    background-color: rgba(5, 5, 5, 0.6); 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Navbar */
@@ -129,8 +130,12 @@ body, html {
 }
 
 /* Marquee Effect */
-.marquee-section, .work {
-    /* Ensure both of these are also transparent */
+.marquee-section {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    white-space: nowrap;
     background-color: transparent; 
 }
 
@@ -156,7 +161,7 @@ body, html {
 .work {
     padding: 10rem 0 0 0;
     overflow: hidden;
-    background-color: var(--bg-color);
+    background-color: transparent; /* FIXED: Ensures image shows through */
 }
 
 .work-header {
@@ -194,8 +199,6 @@ body, html {
     flex-direction: column;
     justify-content: space-between;
     transition: background 0.3s ease, box-shadow 0.3s ease;
-    
-    /* NEW: Ensures smooth skewing and depth */
     will-change: transform;
     transform-origin: center center; 
     box-shadow: 0 0 0 rgba(0,0,0,0);
@@ -203,7 +206,6 @@ body, html {
 
 .project-card:hover {
     background: #161616;
-    /* Removed the static transform scale here, as GSAP handles transforms now */
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
@@ -241,19 +243,20 @@ body, html {
     padding-bottom: 0.2rem;
 }
 
-/* Footer (Fixed underneath the content for Parallax reveal) */
+/* Footer (Normal Flow, Glassmorphism effect) */
 .contact {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: relative; 
     width: 100%;
-    height: 80vh; /* Must match the margin-bottom of content-wrapper */
+    min-height: 80vh;
     padding: 10rem 4rem 4rem 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #050505; /* Slightly darker to separate from main bg */
-    z-index: 1; 
+    z-index: 2;
+    background-color: rgba(5, 5, 5, 0.6); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {
@@ -292,30 +295,4 @@ body, html {
     .horizontal-scroll-wrapper { padding: 0 1.5rem; }
     .contact { padding: 6rem 1.5rem 2rem 1.5rem; }
     .footer-bottom { flex-direction: column; gap: 1rem; align-items: flex-start; }
-}
-/* --- NEW: Background Image Styles --- */
-
-.site-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 0; 
-    /* Using a relative path to the image in your folder */
-    background-image: url('./Under%20the%20Trees.webp'); 
-    background-size: cover;
-    background-position: center;
-    will-change: transform;
-}
-
-/* Gradient overlay ensures your white text stays readable */
-.bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(10,10,10,0.95)); 
-    z-index: 1;
 }
