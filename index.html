@@ -62,52 +62,79 @@
             </section>
 
             <!-- 6. Projects Section -->
-            <section class="work" id="work">
-                <div class="work-header fade-up">
-                    <h2>/projects</h2>
-                    <p>Selected repositories from GitHub</p>
-                </div>
+<section class="work" id="work">
+    
+    <div class="horizontal-scroll-container">
+        
+        <!-- Floating Header that stays pinned while slides scroll behind it -->
+        <div class="work-header fade-up">
+            <p class="section-eyebrow">/ WORK</p>
+            <h2>SELECTED <span class="stroke-text">CASES</span></h2>
+        </div>
+
+        <div class="horizontal-scroll-wrapper">
+            
+            <!-- Project 1 (Full Screen Slide) -->
+            <div class="project-card">
+                <div class="project-cover" style="background-image: url('./Deep-Pulse.webp');"></div>
                 
-                <div class="horizontal-scroll-container">
-                    <div class="horizontal-scroll-wrapper">
+                <div class="project-content">
+                    <div class="project-text">
+                        <div class="project-meta">
+                            <span class="num">01</span>
+                            <div class="line"></div>
+                            <span class="role">HTML / FRONTEND</span>
+                        </div>
                         
-                        <!-- Project 1 -->
-                        <div class="project-card">
-                            <!-- NOTE: Update this URL to match your exact repo filename -->
-                            <div class="project-cover" style="background-image: url('./Deep-Pulse.webp');"></div>
-                            
-                            <div class="project-content">
-                                <div class="project-num">01</div>
-                                <div class="project-info">
-                                    <h3>Deep-Pulse</h3>
-                                    <p class="tech-tag">HTML / Frontend</p>
-                                    <p class="project-desc">A deep analytics or interface pulse-checking application built with a focus on structural markup and responsive design.</p>
-                                    <a href="https://github.com/Biswarup295/Deep-Pulse" target="_blank" class="case-link">View Repository ↗</a>
-                                </div>
-                            </div>
+                        <h3>Deep-Pulse</h3>
+                        <p class="project-sub">A deep analytics or interface pulse-checking application.</p>
+                        <p class="project-desc">Built with a focus on structural markup and responsive design patterns to recover attention stamina and build lasting deep-work habits.</p>
+                        
+                        <div class="tech-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>UI DESIGN</span>
                         </div>
 
-                        <!-- Project 2 -->
-                        <div class="project-card">
-                            <!-- NOTE: Update this URL to match your exact repo filename -->
-                            <div class="project-cover" style="background-image: url('./AI-Hospital-Receptionist.webp');"></div>
-                            
-                            <div class="project-content">
-                                <div class="project-num">02</div>
-                                <div class="project-info">
-                                    <h3>AI-Hospital-Receptionist</h3>
-                                    <p class="tech-tag">JavaScript / AI Agent</p>
-                                    <p class="project-desc">An automated conversational agent designed to handle reception duties, triage logic, and appointment routing logic for healthcare environments.</p>
-                                    <a href="https://github.com/Biswarup295/AI-Hospital-Receptionist" target="_blank" class="case-link">View Repository ↗</a>
-                                </div>
-                            </div>
-                        </div>
-
+                        <a href="https://github.com/Biswarup295/Deep-Pulse" target="_blank" class="case-btn">
+                            VIEW REPOSITORY <span class="arrow-circle">↗</span>
+                        </a>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+
+            <!-- Project 2 (Full Screen Slide) -->
+            <div class="project-card">
+                <div class="project-cover" style="background-image: url('./AI-Hospital-Receptionist.webp');"></div>
+                
+                <div class="project-content">
+                    <div class="project-text">
+                        <div class="project-meta">
+                            <span class="num">02</span>
+                            <div class="line"></div>
+                            <span class="role">JAVASCRIPT / AI AGENT</span>
+                        </div>
+                        
+                        <h3>AI-Hospital-Receptionist</h3>
+                        <p class="project-sub">An automated conversational agent for healthcare environments.</p>
+                        <p class="project-desc">Designed to handle reception duties, triage logic, and appointment routing logic seamlessly without human intervention.</p>
+                        
+                        <div class="tech-tags">
+                            <span>JAVASCRIPT</span>
+                            <span>AI Integration</span>
+                            <span>LOGIC</span>
+                        </div>
+
+                        <a href="https://github.com/Biswarup295/AI-Hospital-Receptionist" target="_blank" class="case-btn">
+                            VIEW REPOSITORY <span class="arrow-circle">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+</section>
 
     <!-- 7. Footer -->
     <footer class="contact" id="about">

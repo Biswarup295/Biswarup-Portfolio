@@ -222,8 +222,67 @@ a, button, .project-card {
     will-change: transform;
 }
 
-/* --- Project Cards --- */
-/* --- Image Cover & Grayscale Reveal Effect --- */
+/* --- Horizontal Work Section (Cinematic Slides) --- */
+.work {
+    background-color: #050505; /* Solid dark background to anchor the slides */
+    overflow: hidden;
+}
+
+.horizontal-scroll-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Floating Work Header */
+.work-header {
+    position: absolute;
+    top: 6rem;
+    left: 4rem;
+    z-index: 10;
+    pointer-events: none; /* Allows clicking through it */
+}
+
+.section-eyebrow {
+    color: #FFD700;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.work-header h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.stroke-text {
+    color: transparent;
+    -webkit-text-stroke: 2px #FFD700;
+}
+
+.horizontal-scroll-wrapper {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+/* --- Project Slides --- */
+.project-card {
+    width: 100vw; /* Takes up the whole screen horizontally */
+    height: 100vh;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden; 
+    will-change: transform;
+    transform-origin: center center; 
+}
+
+/* Image Cover (Right-aligned focus) */
 .project-cover {
     position: absolute;
     top: 0;
@@ -231,35 +290,138 @@ a, button, .project-card {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: right center; /* Focuses the image on the right side */
     z-index: 0;
     
-    /* NEW: Grayscale and dimmed by default for high-end contrast */
     filter: grayscale(100%);
-    opacity: 0.4;
+    opacity: 0.3;
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease, opacity 0.8s ease;
 }
 
 .project-card:hover .project-cover {
-    transform: scale(1.08); /* Premium slow zoom */
-    
-    /* NEW: Blooms into full color and brightens on hover */
+    transform: scale(1.05); 
     filter: grayscale(0%);
-    opacity: 0.7; 
+    opacity: 0.6; 
 }
 
-/* --- Content Wrapper & Bulletproof Gradient --- */
+/* Heavy gradient on the left side to make text readable, fades out to the right */
 .project-content {
     position: relative;
     z-index: 1; 
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 0 4rem;
     height: 100%;
-    
-    /* NEW: A static, heavy gradient that protects the text readability at the bottom */
-    background: linear-gradient(to bottom, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.7) 60%, rgba(17,17,17,0.95) 100%);
+    display: flex;
+    align-items: center; /* Centers the text vertically */
+    background: linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0.8) 45%, rgba(10,10,10,0) 100%);
+}
+
+.project-text {
+    width: 50%; /* Keeps text on the left half of the screen */
+    margin-top: 5rem; /* Pushes it down below the floating header */
+}
+
+/* --- Typography & Meta Data --- */
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.project-meta .num {
+    color: #FFD700;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.project-meta .line {
+    width: 40px;
+    height: 1px;
+    background-color: #555;
+}
+
+.project-meta .role {
+    color: #888;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.project-text h3 {
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.project-sub {
+    font-size: 1.5rem;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.project-desc {
+    font-size: 1.1rem;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 80%;
+}
+
+/* --- Tech Pill Tags --- */
+.tech-tags {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tech-tags span {
+    border: 1px solid #333;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aaa;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .tech-tags span {
+    border-color: #FFD700;
+    color: #FFD700;
+}
+
+/* --- Button --- */
+.case-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.arrow-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #FFD700;
+    color: #0a0a0a;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: normal;
+    transition: transform 0.3s ease;
+}
+
+.case-btn:hover .arrow-circle {
+    transform: scale(1.1) rotate(45deg);
 }
 
 /* RESTORED TYPOGRAPHY CLASSES */
