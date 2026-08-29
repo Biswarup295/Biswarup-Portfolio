@@ -13,6 +13,8 @@
 
 body, html {
     width: 100%;
+    /* ADD THIS BACK: Stops the white background bleeding through */
+    background-color: var(--bg-color); 
     color: var(--text-color);
     font-family: var(--font-primary);
     overflow-x: hidden;
@@ -24,6 +26,7 @@ body, html {
 }
 
 /* --- Background Image Styles --- */
+/* --- Background Image Styles --- */
 .site-background {
     position: fixed;
     top: 0;
@@ -31,10 +34,11 @@ body, html {
     width: 100%;
     height: 100vh;
     z-index: 0; 
+    /* Updated to your current filename */
     background-image: url('./Background%20Image.webp'); 
     background-size: cover;
-    background-position: center;
-    will-change: transform;
+    background-position: top center; /* Helps prevent the face from getting cut off */
+    will-change: transform, opacity;
 }
 
 .bg-overlay {

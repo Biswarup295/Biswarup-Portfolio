@@ -143,3 +143,16 @@ gsap.to('.site-background', {
         scrub: true
     }
 });
+
+// 7. Fade to Black for Projects Section
+// Fades out the background image so the solid black body background shows through
+gsap.to('.site-background', {
+    opacity: 0,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".work",
+        start: "top 60%", // Starts fading when the /projects section comes into view
+        end: "top 10%",   // Fully black by the time the section reaches the top
+        scrub: true
+    }
+});
