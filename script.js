@@ -156,3 +156,31 @@ gsap.to('.site-background', {
         scrub: true
     }
 });
+
+// 8. Custom Smooth Cursor
+const cursor = document.querySelector('.custom-cursor');
+
+// Failsafe: Only run if the cursor element actually exists in the HTML
+if (cursor) {
+    // Let GSAP perfectly center the dot on the pointer
+    gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+
+    let xTo = gsap.quickTo(cursor, "x", {duration: 0.15, ease: "power3"});
+    let yTo = gsap.quickTo(cursor, "y", {duration: 0.15, ease: "power3"});
+
+    window.addEventListener("mousemove", (e) => {
+        xTo(e.clientX);
+        yTo(e.clientY);
+    });
+
+    const interactives = document.querySelectorAll('a, .project-card, .logo, .case-link');
+
+    interactives.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hovered');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hovered');
+        });
+    });
+}

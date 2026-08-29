@@ -317,17 +317,11 @@ body, html, a, button, .project-card {
     height: 12px;
     background-color: var(--text-color);
     border-radius: 50%;
-    pointer-events: none; /* CRITICAL: Allows clicks to pass through to links underneath */
+    pointer-events: none; 
     z-index: 9999;
-    
-    /* Mix-blend-mode ensures the cursor flips colors if it goes over white text */
     mix-blend-mode: difference; 
-    
-    /* Smooth transition for the hover expansion */
     transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
-    
-    /* Starts off-screen to avoid an initial flash at 0,0 */
-    transform: translate(-50%, -50%); 
+
 }
 
 /* The expanded state when hovering over links or project cards */
