@@ -317,7 +317,14 @@ a, button, .project-card {
 
 .project-text {
     width: 50%; /* Keeps text on the left half of the screen */
-    margin-top: 5rem; /* Pushes it down below the floating header */
+    /* Removed margin-top so the text perfectly centers vertically */
+}
+
+/* --- NEW: Button Group --- */
+.button-group {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* Ensures buttons stack cleanly on small screens */
 }
 
 /* --- Typography & Meta Data --- */
