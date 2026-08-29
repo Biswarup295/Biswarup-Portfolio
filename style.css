@@ -302,3 +302,48 @@ body, html {
     .contact { padding: 6rem 1.5rem 2rem 1.5rem; }
     .footer-bottom { flex-direction: column; gap: 1rem; align-items: flex-start; }
 }
+
+/* Hide default cursor on the whole page and links */
+body, html, a, button, .project-card {
+    cursor: none !important;
+}
+
+/* --- Custom Cursor Styles --- */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    pointer-events: none; /* CRITICAL: Allows clicks to pass through to links underneath */
+    z-index: 9999;
+    
+    /* Mix-blend-mode ensures the cursor flips colors if it goes over white text */
+    mix-blend-mode: difference; 
+    
+    /* Smooth transition for the hover expansion */
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+    
+    /* Starts off-screen to avoid an initial flash at 0,0 */
+    transform: translate(-50%, -50%); 
+}
+
+/* The expanded state when hovering over links or project cards */
+.custom-cursor.hovered {
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+}
+
+/* Hide custom cursor on mobile touch devices */
+@media (max-width: 768px) {
+    .custom-cursor {
+        display: none;
+    }
+    body, html, a, button, .project-card {
+        cursor: auto !important;
+    }
+}
