@@ -180,13 +180,18 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.4s ease, background 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    
+    /* NEW: Ensures smooth skewing and depth */
     will-change: transform;
+    transform-origin: center center; 
+    box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
 .project-card:hover {
     background: #161616;
-    transform: scale(0.98); /* Slight press-in effect on hover */
+    /* Removed the static transform scale here, as GSAP handles transforms now */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .project-num {

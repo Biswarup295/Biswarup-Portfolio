@@ -1,4 +1,4 @@
-// 1. Initialize Lenis Smooth Scrolling (Crucial for Parallax)
+// 1. Initialize Lenis Smooth Scrolling
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
@@ -15,27 +15,43 @@ gsap.ticker.lagSmoothing(0);
 // Register GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-// 2. Initial Load Fade-Up Animations
+// 2. Premium Fade-Up Animations (Using Expo.out for a sharper, high-end feel)
 const fadeElements = document.querySelectorAll('.fade-up');
 fadeElements.forEach((el) => {
-    gsap.set(el, { y: 50, opacity: 0 });
+    // Add a slight rotation for a more dynamic reveal
+    gsap.set(el, { y: 60, opacity: 0, rotation: 2 });
+    
     ScrollTrigger.create({
         trigger: el,
         start: "top 90%",
         onEnter: () => {
-            gsap.to(el, { y: 0, opacity: 1, duration: 1, ease: "power3.out", stagger: 0.2 });
+            gsap.to(el, { 
+                y: 0, 
+                opacity: 1, 
+                rotation: 0, 
+                duration: 1.4, 
+                ease: "expo.out" 
+            });
         },
         once: true
     });
 });
 
+// Trigger Hero section immediately on load
 gsap.to('.hero .fade-up', {
-    y: 0, opacity: 1, duration: 1, ease: "power3.out", stagger: 0.15, delay: 0.2
+    y: 0, 
+    opacity: 1, 
+    rotation: 0, 
+    duration: 1.4, 
+    ease: "expo.out", 
+    stagger: 0.15, 
+    delay: 0.2
 });
 
-// 3. Hero Parallax Effect (Moves text down and fades out as you scroll)
+// 3. Enhanced Hero Parallax (Adds a subtle scale-down for depth)
 gsap.to('.hero-content', {
-    yPercent: 40,
+    yPercent: 50,
+    scale: 0.9,
     opacity: 0,
     ease: "none",
     scrollTrigger: {
@@ -46,10 +62,9 @@ gsap.to('.hero-content', {
     }
 });
 
-// 4. Horizontal Scroll Effect for Projects
+// 4. Horizontal Scroll Effect
 const horizontalSection = document.querySelector('.horizontal-scroll-wrapper');
 const container = document.querySelector('.horizontal-scroll-container');
-const cards = gsap.utils.toArray('.project-card');
 
 function getScrollAmount() {
     let scrollWidth = horizontalSection.scrollWidth;
@@ -71,17 +86,45 @@ ScrollTrigger.create({
     invalidateOnRefresh: true
 });
 
-// 5. Footer Reveal Parallax Effect
-// The footer stays in place while the content wrapper scrolls up over it
+// 4b. Dynamic Velocity Skew (The "Awwwards" lean effect)
+let proxy = { skew: 0 },
+    skewSetter = gsap.quickSetter(".project-card", "skewX", "deg"),
+    clamp = gsap.utils.clamp(-12, 12); // Limits the lean angle so it doesn't break
+
+ScrollTrigger.create({
+  onUpdate: (self) => {
+    let skew = clamp(self.getVelocity() / -200);
+    // Only animate if scrolling fast enough
+    if (Math.abs(skew) > Math.abs(proxy.skew)) {
+      proxy.skew = skew;
+      gsap.to(proxy, {
+        skew: 0, 
+        duration: 1, 
+        ease: "power3", 
+        overwrite: true, 
+        onUpdate: () => skewSetter(proxy.skew)
+      });
+    }
+  }
+});
+
+// 5. True 3D Footer Parallax Reveal
+// Triggers when the bottom of the main content wrapper hits the bottom of the screen
 gsap.fromTo('.footer-content', 
-    { yPercent: -50 }, 
+    { 
+        y: -100, 
+        scale: 0.9, 
+        opacity: 0 
+    }, 
     {
-        yPercent: 0,
+        y: 0,
+        scale: 1,
+        opacity: 1,
         ease: "none",
         scrollTrigger: {
-            trigger: '.contact',
-            start: "top bottom",
-            end: "bottom bottom",
+            trigger: '.content-wrapper', // Use the wrapper, not the fixed footer
+            start: "bottom bottom", 
+            end: "max", // Animates until the absolute bottom of the page
             scrub: true
         }
     }
