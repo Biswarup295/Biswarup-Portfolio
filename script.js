@@ -110,21 +110,22 @@ ScrollTrigger.create({
 
 // 5. True 3D Footer Parallax Reveal
 // Triggers when the bottom of the main content wrapper hits the bottom of the screen
+// 5. Updated Footer Parallax (For Transparent Sites)
 gsap.fromTo('.footer-content', 
     { 
-        y: -100, 
-        scale: 0.9, 
-        opacity: 0 
+        y: -80, 
+        opacity: 0,
+        scale: 0.95
     }, 
     {
         y: 0,
-        scale: 1,
         opacity: 1,
+        scale: 1,
         ease: "none",
         scrollTrigger: {
-            trigger: '.content-wrapper', // Use the wrapper, not the fixed footer
-            start: "bottom bottom", 
-            end: "max", // Animates until the absolute bottom of the page
+            trigger: '.contact',
+            start: "top 85%", // Triggers when the top of the footer enters the viewport
+            end: "bottom bottom",
             scrub: true
         }
     }

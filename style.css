@@ -31,9 +31,26 @@ body, html {
 .content-wrapper {
     position: relative;
     z-index: 2;
-    margin-bottom: 80vh; 
-    /* Ensure this is transparent */
     background-color: transparent; 
+    /* REMOVED: margin-bottom: 80vh; */
+}
+
+/* Footer put back into normal flow */
+.contact {
+    position: relative; 
+    width: 100%;
+    min-height: 80vh;
+    padding: 10rem 4rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    
+    /* Premium glass effect over your background image */
+    background-color: rgba(5, 5, 5, 0.6); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Navbar */
