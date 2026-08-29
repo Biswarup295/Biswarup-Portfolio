@@ -28,4 +28,4 @@ This portfolio serves as a central hub for my work as a B.Tech Computer Science 
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/Biswarup295/Biswarup-Portfolio.git](https://github.com/Biswarup295/Biswarup-Portfolio.git)
+   git clone [https://github.com/Biswarup295/Biswarup-Portfolio.git]
