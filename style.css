@@ -135,27 +135,35 @@ body, html {
     letter-spacing: 1px;
 }
 
-/* Marquee Effect */
+/* --- Marquee / Ribbon Bar --- */
 .marquee-section {
-    padding: 4rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0; /* Makes the bar thinner like a ribbon */
+    background-color: #FFD700; /* The vibrant yellow color */
+    border: none; /* Removes the old transparent borders */
     overflow: hidden;
     white-space: nowrap;
-    background-color: transparent; 
+    
+    /* Ensure it stays above the background image */
+    position: relative;
+    z-index: 2; 
 }
 
 .marquee-content {
     display: inline-block;
-    font-size: 4rem;
+    font-size: 1.2rem; /* Smaller, punchier font */
+    font-weight: 700; /* Bold text */
+    letter-spacing: 3px; /* Spread out the letters */
     text-transform: uppercase;
-    font-weight: 300;
     animation: marquee 20s linear infinite;
     will-change: transform;
+    
+    /* Force the text to be black against the yellow background */
+    color: #0a0a0a !important; 
 }
 
 .marquee-content span {
-    padding-right: 2rem;
+    padding-right: 3rem;
+    color: #0a0a0a; 
 }
 
 @keyframes marquee {
