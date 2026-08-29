@@ -203,34 +203,61 @@ body, html {
     will-change: transform;
 }
 
+/* --- Project Cards Base --- */
 .project-card {
     width: 600px;
     height: 60vh;
     background: #111;
     border: 1px solid #333;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Keeps the zooming image inside the borders */
+    transition: box-shadow 0.4s ease;
     will-change: transform;
     transform-origin: center center; 
     box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
 .project-card:hover {
-    background: #161616;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-.project-num {
-    font-size: 2rem;
-    color: var(--accent-color);
+/* --- NEW: Image Cover & Zoom Effect --- */
+.project-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.project-info h3 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+/* Dark gradient overlay to ensure white text remains readable */
+.project-cover::after {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.95) 90%);
+}
+
+.project-card:hover .project-cover {
+    transform: scale(1.08); /* Premium slow zoom on hover */
+}
+
+/* --- NEW: Content Wrapper --- */
+.project-content {
+    position: relative;
+    z-index: 1; /* Keeps text above the image */
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .tech-tag {
@@ -241,12 +268,7 @@ body, html {
     margin-bottom: 2rem;
 }
 
-.project-desc {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    color: #ccc;
-}
+
 
 .case-link {
     color: var(--text-color);
