@@ -497,18 +497,56 @@ a, button, .project-card {
     letter-spacing: -2px;
 }
 
+/* --- Updated Footer & Social Buttons --- */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #333;
     padding-top: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allows items to stack cleanly on smaller screens */
 }
 
-.footer-bottom a {
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #333;
+    border-radius: 50px; /* Creates the pill shape */
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.social-btn svg {
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect: Turns yellow with black text/icons */
+.social-btn:hover {
+    border-color: #FFD700;
+    background-color: #FFD700;
+    color: #0a0a0a;
+}
+
+.social-btn:hover svg {
+    transform: scale(1.1); /* Subtle logo pop */
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #888;
 }
 
 /* Mobile Fixes */
