@@ -498,14 +498,17 @@ a, button, .project-card {
 }
 
 /* --- Updated Footer & Social Buttons --- */
-.footer-bottom {
+/* --- Centered Footer Header --- */
+.footer-header-centered {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    border-top: 1px solid #333;
-    padding-top: 2rem;
-    gap: 2rem;
-    flex-wrap: wrap; /* Allows items to stack cleanly on smaller screens */
+    text-align: center;
+    width: 100%;
+}
+
+.footer-header-centered h2 {
+    margin-bottom: 2rem; /* Adds perfect breathing room between the heading and the yellow label */
 }
 
 .social-buttons {
