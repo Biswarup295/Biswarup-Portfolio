@@ -516,7 +516,12 @@ a, button, .project-card {
     align-self: flex-start; /* Pushes ONLY the / CONTACT label to the far left */
     text-align: left;
 }
-
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 2rem; /* Creates the space below the buttons */
+    line-height: 1.6; /* Adds breathing room between the two lines of text */
+}
 .social-buttons {
     display: flex;
     gap: 1rem;
