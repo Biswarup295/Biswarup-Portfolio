@@ -129,3 +129,16 @@ gsap.fromTo('.footer-content',
         }
     }
 );
+
+// 6. Deep Background Parallax
+// Pushes the background image down slightly as you scroll down the page
+gsap.to('.site-background', {
+    yPercent: 15, 
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".content-wrapper",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+    }
+});
