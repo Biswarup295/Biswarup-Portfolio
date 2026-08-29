@@ -1,51 +1,61 @@
+// 1. Initialize Lenis Smooth Scrolling (Crucial for Parallax)
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+    smooth: true,
+});
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
+
 // Register GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. Initial Load Fade-Up Animations
+// 2. Initial Load Fade-Up Animations
 const fadeElements = document.querySelectorAll('.fade-up');
-
 fadeElements.forEach((el) => {
-    // Set initial state
     gsap.set(el, { y: 50, opacity: 0 });
-
-    // Animate to visible state on scroll (or instantly if in hero section)
     ScrollTrigger.create({
         trigger: el,
-        start: "top 90%", // Triggers when the top of the element hits 90% of the viewport height
+        start: "top 90%",
         onEnter: () => {
-            gsap.to(el, {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power3.out",
-                stagger: 0.2
-            });
+            gsap.to(el, { y: 0, opacity: 1, duration: 1, ease: "power3.out", stagger: 0.2 });
         },
-        once: true // Only animate once
+        once: true
     });
 });
 
-// Trigger Hero section immediately on load
 gsap.to('.hero .fade-up', {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "power3.out",
-    stagger: 0.15,
-    delay: 0.2
+    y: 0, opacity: 1, duration: 1, ease: "power3.out", stagger: 0.15, delay: 0.2
 });
 
-// 2. Horizontal Scroll Effect for Projects
+// 3. Hero Parallax Effect (Moves text down and fades out as you scroll)
+gsap.to('.hero-content', {
+    yPercent: 40,
+    opacity: 0,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+    }
+});
+
+// 4. Horizontal Scroll Effect for Projects
 const horizontalSection = document.querySelector('.horizontal-scroll-wrapper');
 const container = document.querySelector('.horizontal-scroll-container');
+const cards = gsap.utils.toArray('.project-card');
 
-// Calculate how far to move horizontally based on the width of the content
 function getScrollAmount() {
     let scrollWidth = horizontalSection.scrollWidth;
-    return -(scrollWidth - window.innerWidth + (window.innerWidth * 0.1)); // Gives a little padding at the end
+    return -(scrollWidth - window.innerWidth + (window.innerWidth * 0.1)); 
 }
 
-// Create the pinning and horizontal movement
 const tween = gsap.to(horizontalSection, {
     x: getScrollAmount,
     ease: "none"
@@ -54,9 +64,25 @@ const tween = gsap.to(horizontalSection, {
 ScrollTrigger.create({
     trigger: container,
     start: "center center", 
-    end: () => `+=${getScrollAmount() * -1}`, // The distance to scroll down equals the distance to move right
+    end: () => `+=${getScrollAmount() * -1}`, 
     pin: true,
     animation: tween,
-    scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-    invalidateOnRefresh: true // Recalculates if window is resized
+    scrub: 1,
+    invalidateOnRefresh: true
 });
+
+// 5. Footer Reveal Parallax Effect
+// The footer stays in place while the content wrapper scrolls up over it
+gsap.fromTo('.footer-content', 
+    { yPercent: -50 }, 
+    {
+        yPercent: 0,
+        ease: "none",
+        scrollTrigger: {
+            trigger: '.contact',
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true
+        }
+    }
+);
