@@ -12,13 +12,13 @@ gsap.ticker.add((time) => {
 });
 gsap.ticker.lagSmoothing(0);
 
-// Register GSAP ScrollTrigger
+
 gsap.registerPlugin(ScrollTrigger);
 
 // 2. Premium Fade-Up Animations (Using Expo.out for a sharper, high-end feel)
 const fadeElements = document.querySelectorAll('.fade-up');
 fadeElements.forEach((el) => {
-    // Add a slight rotation for a more dynamic reveal
+    
     gsap.set(el, { y: 60, opacity: 0, rotation: 2 });
     
     ScrollTrigger.create({
@@ -86,7 +86,7 @@ ScrollTrigger.create({
     invalidateOnRefresh: true
 });
 
-// 4b. Dynamic Velocity Skew (The "Awwwards" lean effect)
+// 4b. Dynamic Velocity Skew 
 let proxy = { skew: 0 },
     skewSetter = gsap.quickSetter(".project-card", "skewX", "deg"),
     clamp = gsap.utils.clamp(-12, 12); // Limits the lean angle so it doesn't break
@@ -108,9 +108,8 @@ ScrollTrigger.create({
   }
 });
 
-// 5. True 3D Footer Parallax Reveal
-// Triggers when the bottom of the main content wrapper hits the bottom of the screen
-// 5. Updated Footer Parallax (For Transparent Sites)
+// 5. Updated Footer Parallax
+
 gsap.fromTo('.footer-content', 
     { 
         y: -80, 
@@ -124,7 +123,7 @@ gsap.fromTo('.footer-content',
         ease: "none",
         scrollTrigger: {
             trigger: '.contact',
-            start: "top 85%", // Triggers when the top of the footer enters the viewport
+            start: "top 85%", 
             end: "bottom bottom",
             scrub: true
         }
@@ -132,7 +131,6 @@ gsap.fromTo('.footer-content',
 );
 
 // 6. Deep Background Parallax
-// Pushes the background image down slightly as you scroll down the page
 gsap.to('.site-background', {
     yPercent: 15, 
     ease: "none",
@@ -145,14 +143,12 @@ gsap.to('.site-background', {
 });
 
 // 7. Fade to Black for Projects Section
-// Fades out the background image so the solid black body background shows through
 gsap.to('.site-background', {
     opacity: 0,
     ease: "none",
     scrollTrigger: {
         trigger: ".work",
-        start: "top 60%", // Starts fading when the /projects section comes into view
-        end: "top 10%",   // Fully black by the time the section reaches the top
+        start: "top 60%", 
         scrub: true
     }
 });
@@ -160,7 +156,7 @@ gsap.to('.site-background', {
 // 8. Custom Smooth Cursor
 const cursor = document.querySelector('.custom-cursor');
 
-// Failsafe: Only run if the cursor element actually exists in the HTML
+
 if (cursor) {
     // Let GSAP perfectly center the dot on the pointer
     gsap.set(cursor, { xPercent: -50, yPercent: -50 });
