@@ -78,7 +78,7 @@ a, button, .project-card {
     .hero-content {
         max-width: 50vw; 
     }
-} /* <--- THIS WAS THE MISSING BRACKET THAT BROKE EVERYTHING */
+} 
 
 /* --- Layout Wrappers --- */
 .content-wrapper {
@@ -224,7 +224,7 @@ a, button, .project-card {
 
 /* --- Horizontal Work Section (Cinematic Slides) --- */
 .work {
-    background-color: #050505; /* Solid dark background to anchor the slides */
+    background-color: #050505;
     overflow: hidden;
 }
 
@@ -240,7 +240,7 @@ a, button, .project-card {
 /* --- Floating Work Header --- */
 .floating-work-header {
     position: absolute;
-    top: 3rem; /* CHANGED: Moves the text up to where your cursor is */
+    top: 3rem; 
     left: 4rem; 
     z-index: 10;
     pointer-events: none; 
@@ -274,7 +274,7 @@ a, button, .project-card {
 
 /* --- Project Slides --- */
 .project-card {
-    width: 100vw; /* Takes up the whole screen horizontally */
+    width: 100vw;
     height: 100vh;
     background: #0a0a0a;
     position: relative;
@@ -291,7 +291,7 @@ a, button, .project-card {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: right center; /* Focuses the image on the right side */
+    background-position: right center; 
     z-index: 0;
     
     filter: grayscale(100%);
@@ -317,15 +317,15 @@ a, button, .project-card {
 }
 
 .project-text {
-    width: 50%; /* Keeps text on the left half of the screen */
-    /* Removed margin-top so the text perfectly centers vertically */
+    width: 50%; 
+    
 }
 
 /* --- NEW: Button Group --- */
 .button-group {
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap; /* Ensures buttons stack cleanly on small screens */
+    flex-wrap: wrap; 
 }
 
 /* --- Typography & Meta Data --- */
@@ -497,7 +497,7 @@ a, button, .project-card {
     letter-spacing: -2px;
 }
 
-/* --- Updated Footer & Social Buttons --- */
+
 /* --- Centered Footer Header --- */
 .footer-header-centered {
     display: flex;
@@ -509,18 +509,18 @@ a, button, .project-card {
 }
 
 .footer-header-centered h2 {
-    margin-bottom: 6rem; /* Creates massive space between the big text and / CONTACT */
+    margin-bottom: 6rem; 
 }
 
 .footer-header-centered .section-eyebrow {
-    align-self: flex-start; /* Pushes ONLY the / CONTACT label to the far left */
+    align-self: flex-start; 
     text-align: left;
 }
 .footer-bottom p {
     font-size: 0.9rem;
     color: #888;
-    margin-top: 2rem; /* Creates the space below the buttons */
-    line-height: 1.6; /* Adds breathing room between the two lines of text */
+    margin-top: 2rem; 
+    line-height: 1.6; 
 }
 .social-buttons {
     display: flex;
@@ -547,7 +547,7 @@ a, button, .project-card {
     transition: transform 0.3s ease;
 }
 
-/* Hover Effect: Turns yellow with black text/icons */
+
 .social-btn:hover {
     border-color: #FFD700;
     background-color: #FFD700;
@@ -555,7 +555,7 @@ a, button, .project-card {
 }
 
 .social-btn:hover svg {
-    transform: scale(1.1); /* Subtle logo pop */
+    transform: scale(1.1); 
 }
 
 .footer-bottom p {
