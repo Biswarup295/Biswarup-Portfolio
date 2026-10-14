@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biswarup — Software Developer</title>
+    <meta name="description" content="Biswarup Mondal — Software Developer. An interactive 3D parallax portfolio.">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
+    <script>
+        window.__booted = false;
+        window.setTimeout(function () {
+            if (!window.__booted) document.documentElement.classList.add("no-js");
+        }, 3000);
+    </script>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000000'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='bold' fill='%23FFD700' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+    <!-- Google Fonts: Inter (300,400,500) + Syne (700,800) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <noscript>
+        <style>.reveal-mask>span{transform:none!important}.marquee-inner{animation:none!important}#scene-canvas,.cursor-blob{display:none!important}</style>
+    </noscript>
+</head>
+<body>
+
+<canvas id="scene-canvas" aria-hidden="true"></canvas>
+<div class="cursor-blob" id="cursor-blob" aria-hidden="true"></div>
+<div class="scroll-rail" aria-hidden="true"><span id="rail-fill"></span></div>
+
+<header class="nav">
+    <a class="nav-logo" href="#top">BISWARUP MONDAL</a>
+    <nav class="nav-links" aria-label="Sections">
+        <a href="#about">/about</a>
+        <a href="#skills">/skills</a>
+        <a href="#work">/work</a>
+        <a href="#contact">/contact</a>
+    </nav>
+</header>
+
+<main id="top">
+
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <p class="eyebrow reveal">Available for work · 2026</p>
+            <h1 class="hero-title">
+                <span class="hero-line"><span class="hero-word" data-depth="0.40" data-speed="-1.1">Biswarup</span></span>
+                <span class="hero-line"><span class="hero-word outline-text" data-depth="0.18" data-speed="1.5">Mondal</span></span>
+            </h1>
+            <h2 class="hero-role reveal">Software Developer · B.Tech Computer Science</h2>
+            <p class="hero-copy reveal">Building scalable algorithms, seamless web experiences, and intelligent systems. Bridging the gap between complex backend logic and clean user interfaces.</p>
+            <div class="hero-cta reveal">
+                <a class="btn btn--solid" href="#work">View My Work</a>
+                <a class="btn btn--ghost" href="#contact">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-hint">scroll ↓</div>
+    </section>
+
+    <section class="intro" id="about">
+        <div class="wrap">
+            <p class="eyebrow reveal">/ about</p>
+            <h2 class="statement reveal">Engineering logic, designing experiences.</h2>
+            <p class="lede reveal">I'm Biswarup Mondal, a B.Tech Computer Science student and software developer focused on building scalable algorithms, seamless web experiences, and intelligent systems. I enjoy working across the full stack — from data structures and algorithms to polished, cinematic frontends.</p>
+            <dl class="facts reveal">
+                <div><dt>Focus</dt><dd>Software Development · DSA</dd></div>
+                <div><dt>Education</dt><dd>B.Tech Computer Science</dd></div>
+                <div><dt>Based</dt><dd>India</dd></div>
+                <div><dt>Stack</dt><dd>Python · JavaScript · C · Java · SQL</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-inner" id="marquee-inner">
+            <span class="marquee-text outline-text">Python // C // Java // SQL // JavaScript // HTML // CSS // DSA // </span>
+            <span class="marquee-text outline-text">Python // C // Java // SQL // JavaScript // HTML // CSS // DSA // </span>
+        </div>
+    </div>
+
+    <section class="skills" id="skills">
+        <div class="wrap">
+            <p class="eyebrow reveal">/ skills</p>
+            <h2 class="statement reveal">Tools of the trade.</h2>
+            <div class="skill-grid">
+                <article class="panel tilt reveal">
+                    <h3 class="panel-title">Languages</h3>
+                    <ul class="tags">
+                        <li>Python</li><li>C</li><li>Java</li><li>SQL</li><li>JavaScript</li><li>HTML</li><li>CSS</li>
+                    </ul>
+                </article>
+                <article class="panel tilt reveal">
+                    <h3 class="panel-title">Web</h3>
+                    <ul class="tags">
+                        <li>HTML5</li><li>CSS3</li><li>JavaScript (ES6+)</li><li>Responsive Design</li>
+                    </ul>
+                </article>
+                <article class="panel tilt reveal">
+                    <h3 class="panel-title">Tools &amp; Concepts</h3>
+                    <ul class="tags">
+                        <li>Git</li><li>VS Code</li><li>Vercel</li><li>DSA</li><li>Algorithms</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="work" id="work">
+        <div class="work-mark outline-text" aria-hidden="true">Work</div>
+        <div class="wrap">
+            <p class="eyebrow reveal">/ work</p>
+            <h2 class="statement reveal">Selected projects.</h2>
+
+            <article class="project reveal">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-index">001</span>
+                        <span class="project-role">HTML / Frontend</span>
+                    </div>
+                    <h3 class="project-title">Deep-Pulse</h3>
+                    <p class="project-sub">A deep analytics or interface pulse-checking application.</p>
+                    <p class="project-copy">Built with a focus on structural markup and responsive design patterns to recover attention stamina and build lasting deep-work habits.</p>
+                    <ul class="tags"><li>HTML</li><li>CSS</li><li>UI Design</li></ul>
+                    <div class="project-links">
+                        <a class="btn btn--solid" href="https://deep-pulse-murex.vercel.app/" target="_blank" rel="noopener">Visit Website</a>
+                        <a class="btn btn--ghost" href="https://github.com/Biswarup295/Deep-Pulse" target="_blank" rel="noopener">View Repository</a>
+                    </div>
+                </div>
+                <div class="project-media">
+                    <img class="project-image" src="/images/Deep-Pulse.webp" alt="Deep-Pulse project cover">
+                    <span class="project-ghost outline-text" aria-hidden="true">Pulse</span>
+                </div>
+            </article>
+
+            <article class="project project--reverse reveal">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-index">002</span>
+                        <span class="project-role">JavaScript / AI Agent</span>
+                    </div>
+                    <h3 class="project-title">AI-Hospital-Receptionist</h3>
+                    <p class="project-sub">An automated conversational agent for healthcare environments.</p>
+                    <p class="project-copy">Designed to handle reception duties, triage logic, and appointment routing logic seamlessly without human intervention.</p>
+                    <ul class="tags"><li>JavaScript</li><li>AI Integration</li><li>Logic</li></ul>
+                    <div class="project-links">
+                        <a class="btn btn--solid" href="https://ai-hospital-receptionist-two.vercel.app/" target="_blank" rel="noopener">Visit Website</a>
+                        <a class="btn btn--ghost" href="https://github.com/Biswarup295/AI-Hospital-Receptionist" target="_blank" rel="noopener">View Repository</a>
+                    </div>
+                </div>
+                <div class="project-media">
+                    <img class="project-image" src="/images/AI-Hospital-Receptionist.webp" alt="AI-Hospital-Receptionist project cover">
+                    <span class="project-ghost outline-text" aria-hidden="true">Triage</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="contact" id="contact">
+        <div class="wrap">
+            <p class="eyebrow reveal">/ contact</p>
+            <h2 class="contact-cta reveal"><a href="mailto:biswarupmondal119@gmail.com">Let's craft the next algorithm.</a></h2>
+            <div class="social reveal">
+                <a class="btn btn--ghost" href="https://www.linkedin.com/in/biswarupmondal789/" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="btn btn--ghost" href="mailto:biswarupmondal119@gmail.com">biswarupmondal119@gmail.com</a>
+                <a class="btn btn--ghost" href="https://github.com/Biswarup295" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <div class="footer-line reveal">
+                <p>Designed and Developed by Biswarup Mondal</p>
+                <p class="footer-time"><span id="footer-time">--:--:--</span> local time</p>
+                <p>Copyright © 2026 Biswarup. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</main>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

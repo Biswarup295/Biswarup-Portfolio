@@ -5,10 +5,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsInlineLimit: 4096,
-    chunkSizeWarningLimit: 900
+    chunkSizeWarningLimit: 900,
   },
   server: {
     port: 5173,
-    open: false
-  }
+    open: false,
+  },
+  preview: {
+    port: 4173,
+    open: false,
+  },
 });
